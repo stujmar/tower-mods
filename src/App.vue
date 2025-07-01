@@ -16,7 +16,7 @@
         Result: <b>{{ chances.epicCount }} epics, {{ chances.rareCount }} rares, {{ chances.commonCount }} commons</b>
       </div>
       <div>
-        Odds of this exact group: <b>{{ chances.odds }}</b>
+        Odds of this group composition: <b>{{ chances.odds }}</b>
       </div>
     </div>
     <div style="margin-top: 16px; color: #aaa; text-align: left;">
