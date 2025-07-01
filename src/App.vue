@@ -124,6 +124,9 @@ export default {
       }
       return arr;
     }
+  },
+  mounted() {
+    this.buyMods(10);
   }
 }
 </script>
