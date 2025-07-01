@@ -2,7 +2,7 @@
   <main>
     <h3>Tower Mods</h3>
     <div class="buy-buttons">
-      <button class="buy-button" @click="buyMods(1)">BUY 1</button>
+      <!-- <button class="buy-button" @click="buyMods(1)">BUY 1</button> -->
       <button class="buy-button" @click="buyMods(10)">BUY 10</button>
     </div>
     <div v-if="results.length > 0" class="results">
