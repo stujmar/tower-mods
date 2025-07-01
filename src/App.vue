@@ -1,10 +1,6 @@
 <template>
   <main>
     <h3>Tower Mods</h3>
-    <div class="buy-buttons">
-      <!-- <button class="buy-button" @click="buyMods(1)">BUY 1</button> -->
-      <button class="buy-button" @click="buyMods(10)">BUY 10</button>
-    </div>
     <div v-if="results.length > 0" class="results">
       <div v-for="(result, ndx) in results" :key="ndx" class="result-container">
         <div :class="result + ' icon'"></div>
@@ -25,6 +21,10 @@
         <span v-if="epic.k === chances.epicCount" style="font-weight:bold; color:#ff03dd;">{{ epic.k }} epics: {{ epic.odds }}</span>
         <span v-else>{{ epic.k }} epics: {{ epic.odds }}</span>
       </div>
+    </div>
+    <div class="buy-buttons">
+      <!-- <button class="buy-button" @click="buyMods(1)">BUY 1</button> -->
+      <button class="buy-button" @click="buyMods(10)">BUY 10</button>
     </div>
   </main>
 </template>
@@ -133,29 +133,41 @@ export default {
 
 <style scoped>
   .buy-buttons {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .buy-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
+    padding: 16px 32px;
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #343434;
     cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    touch-action: manipulation;
+    user-select: none;
+  }
+
+  /* Prevent double-tap zoom on iOS */
+  @media (hover: none) and (pointer: coarse) {
+    .buy-button {
+      touch-action: manipulation;
+    }
   }
 
   .results {
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    /* border: 1px solid #ccc;
-    background-color: #343434; */
+    border: 1px solid #ccc;
+    background-color: #343434;
     display: flex;
-    justify-content: space-around;
     gap: 5px;
+    justify-content: center;
   }
 
   .result-container {
@@ -181,6 +193,10 @@ export default {
 
   .epic {
     background-color: #ff03dd;
+  }
+
+  hr {
+    margin: 20px 0;
   }
 
 </style>
